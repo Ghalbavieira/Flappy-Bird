@@ -1,11 +1,16 @@
 * {
     box-sizing:border-box;
+    font-family: 'Invasion';
+    text-align: center;
 }
 
-/*botar font pixel */
+@font-face {
+    font-family: 'Invasion';
+    src: url("/fonts/INVASION2000.TTF");
+}
 
 [gl-flappy] {
-    position:relative;
+    position: relative;
     border: 5px solid dodgerblue;
     height: 700px;
     width: 1200px;

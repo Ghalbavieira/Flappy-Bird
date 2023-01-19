@@ -1,19 +1,22 @@
 function novoElemento(tagName, className) {
     const elem = document.createElement(tagName)
     elem.className = className
-    return elem
+    return elem;
 }
 
-function Barreira (reversa = false) {
-    this.elemento = novoElemento('div', 'barreira')
+function Barreira(reversa = false) {
+    this.elemento = novoElemento('div', 'barreira');
 
-    const borda = novoElemento('div', 'borda')
-    const corpo = novoElemento('div', 'corpo')
+    const borda = novoElemento('div', 'borda');
+    const corpo = novoElemento('div', 'corpo');
     this.elemento.appendChild(reversa ? corpo : borda)
     this.elemento.appendChild(reversa ? borda : corpo)
     
-    this.setAltura = altura => corpo.style.height = `${altura}px`
+    this.setAltura = altura => corpo.style.height = `${altura}px`;
 }
+// const b = new Barreira(true);
+// b.setAltura(200);
+// document.querySelector('[gl-flappy]').appendChild(b.elemento);
 
 function parDeBarreiras(altura, abertura, x) {
     this.elemento = novoElemento('div', 'par-de-barreiras')
@@ -39,7 +42,7 @@ function parDeBarreiras(altura, abertura, x) {
     this.setX(x)
 }
 
-function Barreira(altura, largura, abertura, espaco, notificarPonto) {
+function Barreiras(altura, largura, abertura, espaco, notificarPonto) {
     this.pares = [
         new parDeBarreiras(altura, abertura, largura),
         new parDeBarreiras(altura, abertura, largura + espaco),
